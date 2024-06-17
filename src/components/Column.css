@@ -1,0 +1,15 @@
+.column-box {
+  width: 10px;
+  height: 10px;
+  border-color: blue;
+  border-width: 5px;
+  border-color: blue;
+  border: white;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
