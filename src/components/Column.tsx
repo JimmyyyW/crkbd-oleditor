@@ -10,7 +10,6 @@ function Column(props: {
   const [squares, setSquares] = useState(defaultSquares)
 
   useEffect(() => {
-    console.log(props.binStringPart)
     setSquares(initialSquares(reverseString(props.binStringPart)));
   }, [props.binStringPart]);
 
