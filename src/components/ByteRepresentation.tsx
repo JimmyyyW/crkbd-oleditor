@@ -3,35 +3,49 @@ import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {binToHex, hexToBin} from "./utils.ts";
 
 function ByteRepresentation(props: {
-  binString : string,
+  binString: string,
   setBinString: Dispatch<SetStateAction<string>>,
 }) {
 
   const [str, setStr] = useState(binToHex(props.binString).toString());
+  const [validStyle, setValidStyle] = useState({});
 
   useEffect(() => {
     setStr(binToHex(props.binString).toString());
   }, [props.binString]);
 
   const handleChange = (event: { target: { value: string; }; }) => {
-    setStr(event.target.value);
-    const binString = hexToBin(event.target.value);
-    console.log(binString)
-    if (!binString.includes("undefined")){
-      console.log('here')
+    const textValue = event.target.value
+    setStr(textValue);
+    const formatted = replaceAll(replaceAll(textValue, '\n', ''), ' ', '');
+    const binString = hexToBin(formatted);
+    if (!binString.includes("undefined")) {
       props.setBinString(binString);
+      setValidStyle({});
+    } else {
+      setValidStyle({
+        borderColor: 'red',
+        borderWidth: '2px',
+        borderStyle: 'solid',
+      })
     }
   };
 
   return (
       <div className="textarea-container">
-        <textarea
-            className="large-textarea"
-            value={str}
-            onChange={handleChange}
-        />
+          <textarea
+              className="large-textarea"
+              value={str}
+              onChange={handleChange}
+              style={validStyle}
+              spellCheck={false}
+          />
       </div>
   )
+}
+
+function replaceAll(str: string, find: string, replace: string) {
+  return str.replace(new RegExp(find, 'g'), replace);
 }
 
 export default ByteRepresentation;

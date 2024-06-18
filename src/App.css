@@ -5,6 +5,21 @@
   text-align: center;
 }
 
+.lower-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.lower-button-container {
+  margin-top: 30px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
