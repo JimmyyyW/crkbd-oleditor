@@ -13,9 +13,10 @@ function ByteRepresentation(props: {
     setStr(binToHex(props.binString).toString());
   }, [props.binString]);
 
-  const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
+  const handleChange = (event: { target: { value: string; }; }) => {
     setStr(event.target.value);
     const binString = hexToBin(event.target.value);
+    console.log(binString)
     if (!binString.includes("undefined")){
       console.log('here')
       props.setBinString(binString);

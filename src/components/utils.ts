@@ -36,7 +36,7 @@ const binLookup = {
   'F': '1111',
 };
 
-export function hexToBin(s: React.SetStateAction<string>) {
+export function hexToBin(s: string) {
   let ret = '';
   const tokens = s.split(',')
   for (const token of tokens) {
