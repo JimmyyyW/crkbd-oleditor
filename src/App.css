@@ -5,6 +5,21 @@
   text-align: center;
 }
 
+.lower-container {
+  display: flex;
+  flex-direction: row;
+  border-color: blue;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  height: 20%;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

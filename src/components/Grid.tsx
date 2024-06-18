@@ -6,6 +6,7 @@ function Grid(props: {binString: string, setBinString: React.Dispatch<React.SetS
   const parsedBinString = parseBinString(props.binString);
   const [parts, setParts] = useState<string[]>(parsedBinString);
 
+
   useEffect(() => {
     setParts(parseBinString(props.binString))
   }, [props.binString]);
@@ -13,6 +14,12 @@ function Grid(props: {binString: string, setBinString: React.Dispatch<React.SetS
   useEffect(() => {
     props.setBinString(parts.join(''));
   }, [parts]);
+
+  // useEffect(() => {
+  //   const handleMouseUp = () => {
+  //     setIsDragging(false);
+  //   }
+  // }, []);
 
 
   const columns = Array(512).fill({}).map(((_, i) => (

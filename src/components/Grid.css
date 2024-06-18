@@ -7,9 +7,11 @@
   display: grid;
   grid-template-columns: repeat(128, 10px);
   gap: 1px;
+
 }
 
 .grid-item {
+  display: grid;
   border-color: white;
   border-width: 4px;
   display: flex;

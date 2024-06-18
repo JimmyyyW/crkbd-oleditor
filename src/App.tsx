@@ -10,8 +10,14 @@ function App() {
   return (
       <>
         <div>
+          <h1>CRKBD OLEDITOR</h1>
           <Grid binString={binString} setBinString={setBinString} />
-          <ByteRepresentation binString={binString} setBinString={setBinString} />
+          <div className="lower-container">
+            <ByteRepresentation binString={binString} setBinString={setBinString}/>
+            <button className="button" onClick={() => setBinString('0'.repeat(4096))}>
+              Reset
+            </button>
+          </div>
         </div>
       </>
   )

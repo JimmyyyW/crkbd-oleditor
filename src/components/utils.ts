@@ -60,7 +60,11 @@ export function binToHex(s: string): string[] {
 
   while (i < s.length) {
     const res = parseHexChar(s.substring(i, splitEnd))
-    arr.push(res);
+    if (is128Multiple(i) && i !== 0) {
+      arr.push('\n ' + res);
+    } else {
+      arr.push(' ' + res);
+    }
     i += 8;
     splitEnd += 8;
   }
@@ -73,3 +77,9 @@ function parseHexChar(s: string): string {
   return `0x${hexLookup[s.substring(0, 4)]}${hexLookup[s.substring(4, 8)]}`;
 }
 
+export function is128Multiple(num: number): boolean {
+  if (num % 128 === 0) {
+    return true;
+  }
+  return false;
+}
