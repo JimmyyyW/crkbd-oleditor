@@ -38,6 +38,7 @@ function ByteRepresentation(props: {
               value={str}
               onChange={handleChange}
               style={validStyle}
+              spellCheck={false}
           />
       </div>
   )

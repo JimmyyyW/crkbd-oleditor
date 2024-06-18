@@ -8,16 +8,16 @@
 .lower-container {
   display: flex;
   flex-direction: row;
-  border-color: blue;
-  border-width: 2px;
-  border-style: solid;
+}
+
+.lower-button-container {
+  margin-top: 30px;
 }
 
 .button {
   display: flex;
   flex-direction: row;
   display: flex;
-  height: 20%;
 }
 
 @keyframes logo-spin {

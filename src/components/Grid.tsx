@@ -15,13 +15,6 @@ function Grid(props: {binString: string, setBinString: React.Dispatch<React.SetS
     props.setBinString(parts.join(''));
   }, [parts]);
 
-  // useEffect(() => {
-  //   const handleMouseUp = () => {
-  //     setIsDragging(false);
-  //   }
-  // }, []);
-
-
   const columns = Array(512).fill({}).map(((_, i) => (
       <div className="grid-item" key={i}>
         <Column binStringPart={parts[i]} index={i} setParts={setParts}/>

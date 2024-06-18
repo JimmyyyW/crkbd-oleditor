@@ -14,9 +14,11 @@ function App() {
           <Grid binString={binString} setBinString={setBinString} />
           <div className="lower-container">
             <ByteRepresentation binString={binString} setBinString={setBinString}/>
-            <button className="button" onClick={() => setBinString('0'.repeat(4096))}>
-              Reset
-            </button>
+            <div className="lower-button-container">
+              <button className="button" onClick={() => setBinString('0'.repeat(4096))}>
+                Reset
+              </button>
+            </div>
           </div>
         </div>
       </>
